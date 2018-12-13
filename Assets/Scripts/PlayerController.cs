@@ -8,11 +8,6 @@ public class PlayerController : NetworkBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Fire();
-        }
-
         if (!isLocalPlayer)
         {
             return;
@@ -23,14 +18,17 @@ public class PlayerController : NetworkBehaviour
 
         transform.Rotate(0, x, 0);
         transform.Translate(0, 0, z);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            CmdFire();
+        }
     }
 
-    public override void OnStartLocalPlayer()
-    {
-        GetComponent<MeshRenderer>().material.color = Color.blue;
-    }
-
-    void Fire()
+    // This [Command] code is called on the Client …
+    // … but it is run on the Server!
+    [Command]
+    void CmdFire()
     {
         // Create the Bullet from the Bullet Prefab
         var bullet = (GameObject)Instantiate(
@@ -41,7 +39,15 @@ public class PlayerController : NetworkBehaviour
         // Add velocity to the bullet
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6;
 
+        // Spawn the bullet on the Clients
+        NetworkServer.Spawn(bullet);
+
         // Destroy the bullet after 2 seconds
         Destroy(bullet, 2.0f);
+    }
+
+    public override void OnStartLocalPlayer()
+    {
+        GetComponent<MeshRenderer>().material.color = Color.blue;
     }
 }

@@ -23,6 +23,9 @@ GameObject:
   - component: {fileID: 23689442029346574}
   - component: {fileID: 135421404521335940}
   - component: {fileID: 54495132837357418}
+  - component: {fileID: 114846317559794540}
+  - component: {fileID: 114600162639903470}
+  - component: {fileID: 114549755365418030}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -100,6 +103,70 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114549755365418030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1699175659472330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b5f36ea402edf409412c3280585485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114600162639903470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1699175659472330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &114846317559794540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1699175659472330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 228
+    i2: 62
+    i3: 238
+    i4: 233
+    i5: 185
+    i6: 227
+    i7: 20
+    i8: 201
+    i9: 26
+    i10: 161
+    i11: 115
+    i12: 47
+    i13: 177
+    i14: 147
+    i15: 221
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!135 &135421404521335940
 SphereCollider:
   m_ObjectHideFlags: 1
